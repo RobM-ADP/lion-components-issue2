@@ -3,23 +3,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const LIB_PREFIX = 'adpl'
 module.exports = {
-  entry: {main: './main.ts'},
+  entry: {main: './main.js'},
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     chunkFilename: '[name].js'
   },
   resolve: {
-    extensions: ['.ts', '.js', '.json']
+    extensions: ['.js', '.json']
   },
   module: {
     rules: [
-      {
-        test: /\.ts$/, use: [
-          'ts-loader'
-        ]
-      },
-      
         {
           test: /\.html$/, exclude: /node_modules/,
           use: {
